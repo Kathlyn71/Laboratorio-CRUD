@@ -23,6 +23,7 @@ Edite el archivo .env y cambie la base de datos a mysql ya que estaba en sqllite
 
 
 phpMyAdmin cree la base de datos con el nombre: crud_rapido
+
 ![Captura CRUD](img3.png)
 
 ---
