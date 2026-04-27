@@ -12,18 +12,18 @@ el framework Laravel. Permitiendo gestionar productos mediante operaciones bási
 
 ### 1. Crear el proyecto
 Primero entrar a la carpeta wamp y ejecute el comando para crear el proyecto
-![Captura CRUD](images/img1.png)
+![Captura CRUD](img1.png)
 
 ---
 
 ### 2. Configurar base de datos
 
 Edite el archivo .env y cambie la base de datos a mysql ya que estaba en sqllite
-![Captura CRUD](images/img2.png)
+![Captura CRUD](img2.png)
 
 
 phpMyAdmin cree la base de datos con el nombre: crud_rapido
-![Captura CRUD](images/img3.png)
+![Captura CRUD](img3.png)
 
 ---
 
@@ -32,11 +32,11 @@ phpMyAdmin cree la base de datos con el nombre: crud_rapido
 En visual studio code abri una terminal y me ubique dentro del proyecto laravel que se creo "crud_rapido"
 y ejecute el comando: php artisan make:model Product -m
 
-![Captura CRUD](images/img4.png)
+![Captura CRUD](img4.png)
 
 luego edite la migración del archivo products
 
-![Captura CRUD](images/img5.png)
+![Captura CRUD](img5.png)
 
 ---
 
@@ -44,14 +44,14 @@ luego edite la migración del archivo products
 
 Ejecute las migraciones
 
-![Captura CRUD](images/img6.png)
+![Captura CRUD](img6.png)
 
 
 ### 5. Instalar generador CRUD
 
 ejecute el comando: composer require ibex/crud-generator --dev
 
-![Captura CRUD](images/img7.png)
+![Captura CRUD](img7.png)
 
 
 ---
@@ -59,7 +59,7 @@ ejecute el comando: composer require ibex/crud-generator --dev
 ### 6. Publicar archivos
 
 ejecute el comando: php artisan vendor:publish --tag=crud
-![Captura CRUD](images/img8.png)
+![Captura CRUD](img8.png)
 
 ---
 
@@ -67,14 +67,14 @@ ejecute el comando: php artisan vendor:publish --tag=crud
 
 luego genere el CRUD con el comado: php artisan make:crud products
 
-![Captura CRUD](images/img9.png)
+![Captura CRUD](img9.png)
 
 Me preguto que elegir y escribi: Blade with Bootstrap css.
 
 El siguio ejecutándose y me dice que el modelo Product ya existe entonces puse n ya que no
 queria sobrescribirlo, luego de eso seguio ejecutándose y que el crub de creo correctamente 
 
-![Captura CRUD](images/img10.png)
+![Captura CRUD](img10.png)
 
 ---
 
@@ -86,7 +86,7 @@ use App\Http\Controllers\ProductController;
 
 Route::resource('products', ProductController::class);
 ```
-![Captura CRUD](images/img11.png)
+![Captura CRUD](img11.png)
 
 
 ---
@@ -109,11 +109,11 @@ php artisan serve
 
 al abrir http://127.0.0.1:8000/products en mi navegador Ya estaba dentro
 
-![Captura CRUD](images/img12.png)
+![Captura CRUD](img12.png)
 
 Pero al presionar el boton crear me salio el siguiente error:
 
-![Captura CRUD](images/img13.png)
+![Captura CRUD](img13.png)
 
 El controlador está intentando usar un archivo llamado: ProductRequest, Pero NO existe en el proyecto
 Investigando porque pasa, es el generador CRUD a veces crea validaciones pero no crea el archivo automáticamente 
@@ -127,29 +127,29 @@ use Illuminate\Http\Request;
 ```
 cambie el metodo store
 
-![Captura CRUD](images/img14.png)
+![Captura CRUD](img14.png)
 
 Y el metodo update:
-![Captura CRUD](images/img15png)
+![Captura CRUD](img15.png)
 
 
 #### 🔹 Error Mass Assignment
 
 Ahora tenia el siguiente error
 
-![Captura CRUD](images/img16png)
+![Captura CRUD](img16.png)
 
 Laravel no me dejo guardar datos por seguridad: mass assignment
 
 En Product.php agregue lo siguiemte:
 
-![Captura CRUD](images/img17png)
+![Captura CRUD](img17.png)
 
 ---
 
 ## ▶️ Ejecución del proyecto
 
-![Captura CRUD](images/img18png)
+![Captura CRUD](img18.png)
 
 y ahora si pude Crear productos, Listar productos, Editar productos y Eliminar productos
 
